@@ -14,10 +14,22 @@ function adicionarTarefa() {
     }
     
     const tarefa = document.createElement("li");
-    tarefa.textContent = texto;
+    const check = document.createElement("button");
+    const textoTarefa = document.createElement("span");
+
+    textoTarefa.textContent = texto;
+    tarefa.appendChild(check);
+    tarefa.appendChild(textoTarefa);
     lista.appendChild(tarefa);
 
     campo.value = "";
+
+    check.type = "button";
+    check.addEventListener("click", marcarTarefa);
+
+    function marcarTarefa() {
+        textoTarefa.classList.toggle("concluida");
+    }
 }
 
 botaoAdd.addEventListener("click", adicionarTarefa);

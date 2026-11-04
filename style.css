@@ -3,7 +3,7 @@
 }
 
 body.dark-mode {
-    --fundo: linear-gradient(to bottom right, #200544, #0e2e63);
+    --fundo: linear-gradient(to bottom right, #3B1F6E, #0e2e63);
 }
 
 body {
@@ -17,4 +17,8 @@ body {
     margin: 0;
 
     background: var(--fundo);
+}
+
+.concluida {
+    text-decoration: line-through;
 }
