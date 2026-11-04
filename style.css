@@ -1,0 +1,16 @@
+:root {
+    --fundo: linear-gradient(to bottom right, #FFB3F7, #BBB3FF, #B3D1FF);
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    margin: 0;
+
+    background: var(--fundo);
+}
