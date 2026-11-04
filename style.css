@@ -2,6 +2,10 @@
     --fundo: linear-gradient(to bottom right, #FFB3F7, #BBB3FF, #B3D1FF);
 }
 
+body.dark-mode {
+    --fundo: linear-gradient(to bottom right, #200544, #0e2e63);
+}
+
 body {
     font-family: 'Fredoka', sans-serif;
 

@@ -3,17 +3,35 @@ const campo = document.getElementById("campo-nova-tarefa");
 const botaoAdd = document.getElementById("botao-adicionar");
 const botaoTema = document.getElementById("botao-tema");
 const lista = document.getElementById("lista");
+const body = document.body;
 
+// add tarefas
 function adicionarTarefa() {
-    if(campo.value === "") {
+    const texto = campo.value.trim();
+
+    if(texto === "") {
         return;
-    } 
-    else {
-        const tarefa = document.createElement("li");
-        tarefa.textContent = campo.value;
-        lista.appendChild(tarefa);
-        campo.value = "";
     }
+    
+    const tarefa = document.createElement("li");
+    tarefa.textContent = texto;
+    lista.appendChild(tarefa);
+    texto = "";
+    
 }
 
 botaoAdd.addEventListener("click", adicionarTarefa);
+
+// dark mode
+function modoEscuro() {
+    body.classList.toggle("dark-mode");
+
+    if(body.classList.contains("dark-mode")) {
+        botaoTema.textContent = "Modo claro";
+    }
+    else {
+        botaoTema.textContent = "Modo escuro";
+    }
+}
+
+botaoTema.addEventListener("click", modoEscuro);
