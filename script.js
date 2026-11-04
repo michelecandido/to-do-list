@@ -17,19 +17,20 @@ function adicionarTarefa() {
     const check = document.createElement("button");
     const textoTarefa = document.createElement("span");
 
+    check.type = "button";
+    check.textContent = "✔";
+    check.setAttribute("aria-label", "Marcar tarefa como concluída.");
+    check.addEventListener("click", () => {
+        textoTarefa.classList.toggle("concluida");
+    });
+
     textoTarefa.textContent = texto;
+    
     tarefa.appendChild(check);
     tarefa.appendChild(textoTarefa);
     lista.appendChild(tarefa);
 
     campo.value = "";
-
-    check.type = "button";
-    check.addEventListener("click", marcarTarefa);
-
-    function marcarTarefa() {
-        textoTarefa.classList.toggle("concluida");
-    }
 }
 
 botaoAdd.addEventListener("click", adicionarTarefa);
@@ -42,7 +43,7 @@ function verificarTecla(event) {
     }
 }
 
-campo.addEventListener("keypress", verificarTecla);
+campo.addEventListener("keydown", verificarTecla);
 
 // dark mode
 function modoEscuro() {
