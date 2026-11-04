@@ -16,11 +16,21 @@ function adicionarTarefa() {
     const tarefa = document.createElement("li");
     tarefa.textContent = texto;
     lista.appendChild(tarefa);
-    texto = "";
-    
+
+    campo.value = "";
 }
 
 botaoAdd.addEventListener("click", adicionarTarefa);
+
+// apertar enter
+function verificarTecla(event) {
+    if(event.key === "Enter") {
+        event.preventDefault();
+        botaoAdd.click();
+    }
+}
+
+campo.addEventListener("keypress", verificarTecla);
 
 // dark mode
 function modoEscuro() {
